@@ -17,7 +17,6 @@ def create():
         check_email(data["email"])
 
         password_to_hash = data.pop("password")
-
         custumer = CustomerModel(**data)
         custumer.password = password_to_hash
         current_app.db.session.add(custumer)
