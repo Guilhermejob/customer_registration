@@ -18,6 +18,9 @@ class CustomerModel(db.Model):
 
     __tablename__ = 'customer'
 
+    mandatory_keys = ["name", "last_name",
+                      "email", "password", "cep", "street", "neighborhood", "state", "phone"]
+
     id = Column(Integer, primary_key=True)
     name = Column(String(100), nullable=False)
     last_name = Column(String(100), nullable=False)

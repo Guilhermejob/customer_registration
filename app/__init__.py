@@ -1,6 +1,6 @@
 from flask import Flask
 from app import routes
-from app.configs import database, migrations
+from app.configs import database, migrations, auth, cors
 from os import getenv
 from dotenv import load_dotenv
 
@@ -15,8 +15,10 @@ def create_app():
     app.config["JSON_SORT_KEYS"] = False
     app.config["SECRET_KEY"] = getenv("SECRET_KEY")
 
+    cors.init_app(app)
     database.init_app(app)
     migrations.init_app(app)
+    auth.init_app(app)
     routes.init_app(app)
 
     return app
