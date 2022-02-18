@@ -1,8 +1,5 @@
-from http import client
-from os import access
 from flask import request, jsonify
-from flask_jwt_extended import create_access_token, get_jwt_identity
-from app.controllers.costumer_controllers import create
+from flask_jwt_extended import create_access_token
 from app.models.customer_model import CustomerModel
 from app.exceptions.login_exceptions import EmailNotFoundError, IncorrectPasswordError, InvalidKeyError
 
